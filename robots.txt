@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://rafaelstz.github.io/comandos-git/sitemap.xml
+Sitemap: http://comandosgit.github.io/sitemap.xml
