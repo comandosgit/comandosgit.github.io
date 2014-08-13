@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="E5A42C839A2CF7FA50F0FB3FCA369D4E" />
+    <title>Comandos Git</title>
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta name="author" content="Rafael Corrêa Gomes">
+    <meta name="description" content="">
+    <meta name="keywords" content="git branch, git commit, git remote, comandos git, github, git merge, windows, mac, bitbucket, git, linux, ubuntu, debian, controle de verão, git add, git pull, git push, git remote">
+    <link rel="canonical" href="http://comandos-git.github.io/">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body data-spy="scroll" data-target=".navbar">
+  	<div class="container">
+  	<div class="row">
+  		<div class="col-xs-9">
+  			<header class="row bb1 pb15">
+				<br>
+				<div class="col-xs-2">
+					<div class="row">
+						<img class="center" src="img/comandos-git.png" alt="Comandos Git">
+					</div>
+				</div>
+				<div class="col-xs-10">
+					<div class="row">
+					<div class="col-xs-12"><h1 class="mtb0"><b>Comandos Git</b></h1></div>
+					<div class="col-xs-12"><h3 class="mtb0">Aprenda Git do básico ao avançado</h3></div>			
+					</div>
+				</div>
+		    </header>
+		
+		    <br>
+			<div class="row">
+				<section class="col-xs-12">
+                    <article class="row" id="instalando-e-configurando">
+						<h2 class="col-xs-12">Instalando e Configurando</h2>
+						<div id="instalacao">
+						    <h4 class="col-xs-12">Instalação</h4>
+						</div>
+						<div id="gitconfig">
+							<h4 class="col-xs-12">git config</h4>							
+						</div>
+						<div id="githelp">
+							<h4 class="col-xs-12">git help</h4>														
+						</div>
+					</article>
+                    <br>
+					<article class="row" id="criando-o-projeto">
+						<h2 class="col-xs-12">Criando o projeto</h2>
+						<div id="gitinit">
+							<h4 class="col-xs-12">git init</h4>							
+						</div>
+						<div id="gitclone">
+							<h4 class="col-xs-12">git clone</h4>														
+						</div>
+					</article>
+					<br>
+					<article class="row" id="basico">
+						<h2 class="col-xs-12">Básico</h2>
+						<div id="gitadd">
+							<h4 class="col-xs-12">git add</h4>
+						</div>
+						<div id="gitstatus">
+							<h4 class="col-xs-12">git status</h4>
+						</div>
+
+						<div id="gitdiff">
+							<h4 class="col-xs-12">git diff</h4>
+						</div>
+						<div id="gitcommit">
+							<h4 class="col-xs-12">git commit</h4>
+						</div>
+						<div id="gitreset">
+							<h4 class="col-xs-12">git reset</h4>
+						</div>
+						<div id="gitrm">
+							<h4 class="col-xs-12">git rm</h4>
+						</div>
+						<div id="gitmv">
+							<h4 class="col-xs-12">git mv</h4>
+						</div>
+					</article>
+					<br>				
+					<article class="row" id="branch">
+						<h2 class="col-xs-12">Branch e Merge</h2>
+						<div id="gitbranch">
+							<h4 class="col-xs-12">git branch</h4>
+						</div>
+						<div id="gitcheckout">
+							<h4 class="col-xs-12">git checkout</h4>
+						</div>
+						<div id="gitmerge">
+							<h4 class="col-xs-12">git merge</h4>
+						</div>
+						<div id="gitmergetool">
+							<h4 class="col-xs-12">git mergetool</h4>
+						</div>
+						<div id="gitlog">
+							<h4 class="col-xs-12">git log</h4>
+						</div>
+						<div id="gitstash">
+							<h4 class="col-xs-12">git stash</h4>
+						</div>
+						<div id="gittag">
+							<h4 class="col-xs-12">git tag</h4>
+						</div>
+					</article>
+					<br>
+					<article class="row" id="sharing">
+					    <h2 class="col-xs-12">Compartilhar e Atualizar Projetos</h2>
+					    <div id="gitfetch">
+					        <h4 class="col-xs-12">git fetch</h4>
+					    </div>
+					    <div id="gitpull">
+					        <h4 class="col-xs-12">git pull</h4>
+					    </div>
+					    <div id="gitpush">
+					        <h4 class="col-xs-12">git push</h4>
+					    </div>
+					    <div id="gitremote">
+					        <h4 class="col-xs-12">git remote</h4>
+					    </div>
+					    <div id="gitsubmodule">
+					        <h4 class="col-xs-12">git submodule</h4>
+					    </div>
+					</article>
+					<br>
+					<article class="row" id="inspect">
+					    <h2 class="col-xs-12">Inspeção e Comparação</h2>
+					    <div id="gitshow">
+					        <h4 class="col-xs-12">git show</h4>
+					    </div>
+					    <div id="gitlog">
+					        <h4 class="col-xs-12">git log</h4>
+					    </div>
+					    <div id="gitdiff">
+					        <h4 class="col-xs-12">git diff</h4>
+					    </div>
+					    <div id="gitshortlog">
+					        <h4 class="col-xs-12">git shortlog</h4>
+					    </div>
+					    <div id="gitdescribe">
+					        <h4 class="col-xs-12">git describe</h4>
+					    </div>
+					</article>
+					<br>
+					<article class="row" id="patching">
+					    <h2 class="col-xs-12">Pacotes</h2>
+					    <div id="gitapply">
+					        <h4 class="col-xs-12">git apply</h4>
+					    </div>
+					    <div id="gitcherrypick">
+					        <h4 class="col-xs-12">git cherry-pick</h4>
+					    </div>
+					    <div id="gitdiff">
+					        <h4 class="col-xs-12">git diff</h4>
+					    </div>
+					    <div id="gitrebase">
+					        <h4 class="col-xs-12">git rebase</h4>
+					    </div>
+					    <div id="gitrevert">
+					        <h4 class="col-xs-12">git revert</h4>
+					    </div>
+				    </article>
+				    <br>
+					<article class="row" id="debug">
+					    <h2 class="col-xs-12">Debugando</h2>
+					    <div id="gitbisect">
+					        <h4 class="col-xs-12">git bisect</h4>
+					    </div>
+					    <div id="gitblame">
+					        <h4 class="col-xs-12">git blame</h4>
+					    </div>
+					    <div id="gitgrep">
+					        <h4 class="col-xs-12">git grep</h4>
+					    </div>
+					</article>
+					<br>
+					<article class="row" id="email">
+					    <h2 class="col-xs-12">Email</h2>
+					    <div id="gitam">
+					        <h4 class="col-xs-12">git am</h4>
+					    </div>
+					    <div id="gitapply2">
+					        <h4 class="col-xs-12">git apply</h4>
+					    </div>
+					    <div id="gitformatpatch">
+					        <h4 class="col-xs-12">git format-patch</h4>
+					    </div>
+					    <div id="gitsendemail">
+					        <h4 class="col-xs-12">git send-email</h4>
+					    </div>
+					    <div id="gitrequestpull">
+					        <h4 class="col-xs-12">git request-pull</h4>
+					    </div>
+					</article>
+					<br>
+					<article class="row" id="external">
+					    <h2 class="col-xs-12">Sistemas Externos</h2>
+					    <div id="gitsvn">
+					        <h4 class="col-xs-12">git svn</h4>
+					    </div>
+					    <div id="gitfastimport">
+					        <h4 class="col-xs-12">git fast-import</h4>
+					    </div>
+					</article>
+					<br>
+					<article class="row" id="administration">
+					    <h2 class="col-xs-12">Administração</h2>
+					    <div id="gitclean">
+					        <h4 class="col-xs-12">git clean</h4>
+					    </div>
+					    <div id="gitgc">
+					        <h4 class="col-xs-12">git gc</h4>
+					    </div>
+					    <div id="gitfsck">
+					        <h4 class="col-xs-12">git fsck</h4>
+					    </div>
+					    <div id="gitreflog">
+					        <h4 class="col-xs-12">git reflog</h4>
+					    </div>
+					    <div id="gitfilterbranch">
+					        <h4 class="col-xs-12">git filter-branch</h4>
+					    </div>
+					    <div id="gitinstaweb">
+					        <h4 class="col-xs-12">git instaweb</h4>
+					    </div>
+					    <div id="gitarchive">
+					        <h4 class="col-xs-12">git archive</h4>
+					    </div>
+					</article>
+					<br>
+					<article class="row" id="server">
+					    <h2 class="col-xs-12">Servidor</h2>
+					    <div id="gitdaemon">
+					        <h4 class="col-xs-12">git daemon</h4>
+					    </div>
+					    <div id="gitupdateserverinfo">
+					        <h4 class="col-xs-12">git update-server-info</h4>
+					    </div>
+					</article>
+					<br>
+					<article class="row" id="plumbing">
+					    <h2 class="col-xs-12">Canalização de Código</h2>
+					    <div id="gitcatfile">
+					        <h4 class="col-xs-12">git cat-file</h4>
+					    </div>
+					    <div id="gitcommittree">
+					        <h4 class="col-xs-12">git commit-tree</h4>
+					    </div>
+					    <div id="gitcountobjects">
+					        <h4 class="col-xs-12">git count-objects</h4>
+					    </div>
+					    <div id="gitdiffindex">
+					        <h4 class="col-xs-12">git diff-index</h4>
+					    </div>
+					    <div id="gitforeachref">
+					        <h4 class="col-xs-12">git for-each-ref</h4>
+					    </div>
+					    <div id="githashobject">
+					        <h4 class="col-xs-12">git hash-object</h4>
+					    </div>
+					    <div id="gitmergebase">
+					        <h4 class="col-xs-12">git merge-base</h4>
+					    </div>
+					    <div id="gitreadtree">
+					        <h4 class="col-xs-12">git read-tree</h4>
+					    </div>
+					    <div id="gitrevlist">
+					        <h4 class="col-xs-12">git rev-list</h4>
+					    </div>
+					    <div id="gitrevparse">
+					        <h4 class="col-xs-12">git rev-parse</h4>
+					    </div>
+					    <div id="gitshowref">
+					        <h4 class="col-xs-12">git show-ref</h4>
+					    </div>
+					    <div id="gitsymbolicref">
+					        <h4 class="col-xs-12">git symbolic-ref</h4>
+					    </div>
+					    <div id="gitupdateindex">
+					        <h4 class="col-xs-12">git update-index</h4>
+					    </div>
+					    <div id="gitupdateref">
+					        <h4 class="col-xs-12">git update-ref</h4>
+					    </div>
+					    <div id="gitverifypack">
+					        <h4 class="col-xs-12">git verify-pack</h4>
+					    </div>
+					    <div id="gitwritetree">
+					        <h4 class="col-xs-12">git write-tree</h4>
+					    </div>
+					</article>
+				</section>
+				
+			</div>
+
+  		</div>
+  		<div class="col-xs-3">  	
+  				<nav class="navbar affix" role="navigation">
+  				<br>
+					<div class="col-xs-12">
+						<!-- Go to www.addthis.com/dashboard to customize your tools -->
+						<div class="addthis_sharing_toolbox"></div>
+					</div>
+				<br>
+				<br>
+					<div class="container-fluid">					
+						<ul class="nav nav-pills nav-stacked">
+						    <li>
+						        <a href="#instalando-e-configurando" class="install"><b>Instalando e Configurando</b></a>
+						        <ul class="nav">
+						            <li><a href="#instalacao">Instalação</a></li>
+						            <li><a href="#gitconfig">git config</a></li>
+						            <li><a href="#githelp">git help</a></li>
+						        </ul>
+						    </li>
+							<li><a class="project" href="#criando-o-projeto"><b>Criando o projeto</b></a>
+								<ul class="nav">
+									<li><a href="#gitinit">git init</a></li>
+									<li><a href="#gitclone">git clone</a></li>
+								</ul>
+							</li>
+							<li><a class="basic" href="#basico"><b>Básico</b></a>
+								<ul class="nav">
+									<li><a href="#gitadd">git add</a></li>
+									<li><a href="#gitstatus">git status</a></li>
+									<li><a href="#gitdiff">git diff</a></li>
+									<li><a href="#gitcommit">git commit</a></li>
+									<li><a href="#gitreset">git reset</a></li>
+									<li><a href="#gitrm">git rm</a></li>
+									<li><a href="#gitmv">git mv</a></li>
+								</ul>
+							</li>
+							<li><a class="branch" href="#branch"><b>Branch e Merge</b></a>
+								<ul class="nav">
+									<li><a href="#gitbranch">git branch</a></li>
+									<li><a href="#gitcheckout">git checkout</a></li>
+									<li><a href="#gitmerge">git merge</a></li>
+									<li><a href="#gitmergetool">git mergetool</a></li>
+									<li><a href="#gitlog">git log</a></li>
+									<li><a href="#gitstash">git stash</a></li>
+									<li><a href="#gittag">git tag</a></li>
+								</ul>
+							</li>
+							<li>
+							    <a href="#sharing" class="sharing"><b>Compartilhar e Atualizar Projetos</b></a>
+							    <ul class="nav">
+							        <li><a href="#gitfetch">git fetch</a></li>
+							        <li><a href="#gitpull">git pull</a></li>
+							        <li><a href="#gitpush">git push</a></li>
+							        <li><a href="#gitremote">git remote</a></li>
+							        <li><a href="#gitsubmodule">git submodule</a></li>
+							    </ul>
+							</li>
+							<li>
+							    <a href="#inspect" class="inspect"><b>Inspeção e Comparação</b></a>
+							    <ul class="nav">
+							        <li><a href="#gitshow">git show</a></li>
+							        <li><a href="#gitlog">git log</a></li>
+							        <li><a href="#gitdiff">git diff</a></li>
+							        <li><a href="#gitshortlog">git shortlog</a></li>
+							        <li><a href="#gitdescribe">git describe</a></li>
+							    </ul>
+							</li>
+							<li>
+                            <a href="#patching" class="patching"><b>Pacotes</b></a>
+							    <ul class="nav">
+							        <li><a href="#gitapply">git apply</a></li>
+							        <li><a href="#gitcherrypick">git cherry-pick</a></li>
+							        <li><a href="#gitdiff">git diff</a></li>
+							        <li><a href="#gitrebase">git rebase</a></li>
+							        <li><a href="#gitrevert">git revert</a></li>
+							     </ul>
+							 </li>
+                            <li>
+							    <a href="#debug" class="debug"><b>Debugando</b></a>
+							    <ul class="nav">
+							        <li><a href="#gitbisect">git bisect</a></li>
+							        <li><a href="#gitblame">git blame</a></li>
+							        <li><a href="#gitgrep">git grep</a></li>
+							    </ul>
+							</li>
+							<li>
+							    <a href="#email" class="email"><b>Email</b></a>
+							    <ul class="nav">
+							        <li><a href="#gitam">git am</a></li>
+							        <li><a href="#gitapply2">git apply</a></li>
+							        <li><a href="#gitformatpatch">git format-patch</a></li>
+							        <li><a href="#gitsendemail">git send-email</a></li>
+							        <li><a href="#gitrequestpull">git request-pull</a></li>
+							    </ul>
+							</li>
+							<li>
+							    <a href="#external" class="external"><b>Sistemas Externos</b></a>
+							    <ul class="nav">
+							        <li><a href="#gitsvn">git svn</a></li>
+							        <li><a href="#gitfastimport">git fast-import</a></li>
+							    </ul>
+							</li>
+							<li>
+							    <a href="#administration" class="administration"><b>Administração</b></a>
+							    <ul class="nav">
+							        <li><a href="#gitclean">git clean</a></li>
+							        <li><a href="#gitgc">git gc</a></li>
+							        <li><a href="#gitfsck">git fsck</a></li>
+							        <li><a href="#gitreflog">git reflog</a></li>
+							        <li><a href="#gitfilterbranch">git filter-branch</a></li>
+							        <li><a href="#gitinstaweb">git instaweb</a></li>
+							        <li><a href="#gitarchive">git archive</a></li>
+							    </ul>
+							</li>
+							<li>
+							    <a href="#plumbing" class="plumbing"><b>Canalização de Código</b></a>
+							    <ul class="nav">
+							        <li><a href="#gitcatfile">git cat-file</a></li>
+							        <li><a href="#gitcommittree">git commit-tree</a></li>
+							        <li><a href="#gitcountobjects">git count-objects</a></li>
+							        <li><a href="#gitdiffindex">git diff-index</a></li>
+							        <li><a href="#gitforeachref">git for-each-ref</a></li>
+							        <li><a href="#githashobject">git hash-object</a></li>
+							        <li><a href="#gitmergebase">git merge-base</a></li>
+							        <li><a href="#gitreadtree">git read-tree</a></li>
+							        <li><a href="#gitrevlist">git rev-list</a></li>
+							        <li><a href="#gitrevparse">git rev-parse</a></li>
+							        <li><a href="#gitshowref">git show-ref</a></li>
+							        <li><a href="#gitsymbolicref">git symbolic-ref</a></li>
+							        <li><a href="#gitupdateindex">git update-index</a></li>
+							        <li><a href="#gitupdateref">git update-ref</a></li>
+							        <li><a href="#gitverifypack">git verify-pack</a></li>
+							        <li><a href="#gitwritetree">git write-tree</a></li>
+							    </ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+  		</div>
+  	</div>
+					
+	
+    
+
+	</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ea006db0c8d27d6"></script>
+	<script type="text/javascript">
+	$('body').scrollspy({ target: '.navbar' })
+	$('[data-spy="scroll"]').each(function () {
+  		var $spy = $(this).scrollspy('refresh')
+	})
+	</script>
+  </body>
+</html>
