@@ -45,3 +45,6 @@ article{background-color: #fcfcfa;border-radius: 5px; border: solid 1px #e2e0d8;
 .administration{background: url(img/admin-sm.png) no-repeat center left;}
 .plumbing{background: url(img/plumbing-sm.png) no-repeat center left;}
 .patching{background: url(img/patching-sm.png) no-repeat center left;}
+
+footer{font-size: 11px; color: #9a9994;}
+.code {background: url("img/code.png") no-repeat;padding-left: 50px;}
