@@ -1,7 +1,8 @@
 body{color: #4e443c;background: #f0efe7 url(img/body.jpg);position: relative;}
 
 h1{font-size: 45px;}
-h3{font-size: 25px;}
+header h3{font-size: 25px;}
+h3{font-size: inherit;line-height: inherit; margin: inherit;}
 h4{font-size: 18px;color: #f14e32;font-weight: bold;}
 
 a{color: #413932;}
@@ -25,13 +26,13 @@ a:hover{color: #f14e32;}
 
 article{background-color: #fcfcfa;border-radius: 5px; border: solid 1px #e2e0d8;}
 
-.nav{list-style: none;}
-.nav li a{font-size: 16px;padding-left: 25px;}
-.nav ul a{font-size: 13px;line-height: 5px; padding-left: 35px;}
-.nav>.active>ul {display: block;}
-.nav .nav {display: none;padding-bottom: 10px;}
-.nav>.active>a, .nav>.active:hover>a, .nav>.active:focus>a {font-weight: bold;background-color: transparent;}
-.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{background-color: inherit; color: #f14e32;}
+nav .nav{list-style: none;}
+nav .nav li a{font-size: 16px;padding-left: 25px;}
+nav .nav ul a{font-size: 13px;line-height: 5px; padding-left: 35px;}
+nav .nav>.active>ul {display: block;}
+nav .nav .nav {display: none;padding-bottom: 10px;}
+nav .nav>.active>a, .nav>.active:hover>a, .nav>.active:focus>a {font-weight: bold;background-color: transparent;}
+nav .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{background-color: inherit; color: #f14e32;}
 
 .install{background: url(img/setup-sm.png) no-repeat center left;}
 .project{background: url(img/projects-sm.png) no-repeat center left;}
