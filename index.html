@@ -52,7 +52,36 @@
 							<h2 class="col-xs-12">Instalando e Configurando</h2>
 							<div id="instalacao">
 							    <h4 class="col-xs-12">Instalação</h4>
-							</div>
+							    <div class="col-xs-12">
+							        <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs" role="tablist">
+                                      <li class="active"><a href="#windows" role="tab" data-toggle="tab"><h3>Windows</h3></a></li>
+                                      <li><a href="#mac" role="tab" data-toggle="tab"><h3>Mac</h3></a></li>
+                                      <li><a href="#linux" role="tab" data-toggle="tab"><h3>Linux</h3></a></li>                                      
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                     <br>
+                                      <div class="tab-pane fade in active" id="windows">
+<p>Instalar o Git no Windows é muito fácil. O projeto msysgit tem um dos procedimentos mais simples de instalação. Simplesmente baixe o arquivo exe do instalador a partir da página do GitHub e execute-o:</p>                                          
+<div class="well well-sm"><a href="http://msysgit.github.com" title="Instalar Git no Windows">http://msysgit.github.com</a></div>
+<p>Após concluir a instalação, você terá tanto uma versão command line (linha de comando, incluindo um cliente SSH que será útil depois) e uma GUI padrão.</p>
+                                      </div>
+                                      <div class="tab-pane fade" id="mac">
+<p>Existem duas formas fáceis de se instalar Git em um Mac. A mais fácil delas é usar o instalador gráfico do Git, que você pode baixar da página do SourceForge:</p>                                          
+<div class="well well-sm"><a href="http://sourceforge.net/projects/git-osx-installer/" title="Instalar Git no Mac">http://sourceforge.net/projects/git-osx-installer/</a></div>
+<p>A outra forma comum é instalar o Git via MacPorts (<a href="http://www.macports.org" title="MacPorts">http://www.macports.org</a>). Se você tem o MacPOrts instalado, instale o Git via</p>
+<div class="well well-sm">$ sudo port install git-core +svn +doc +bash_completion +gitweb</div>
+                                      </div>
+                                      <div class="tab-pane fade" id="linux">
+<p>Se você quiser instalar o Git no Linux via um instalador binário, você pode fazê-lo com a ferramenta de gerenciamento de pacotes (packages) disponível na sua distribuição. Caso você esteja no Fedora, você pode usar o yum:</p>
+<div class="well well-sm">$ yum install git-core</div>
+<p>Ou se você estiver em uma distribuição baseada no Debian, como o Ubuntu, use o apt-get:</p>
+<div class="well well-sm">$ apt-get install git</div>
+                                      </div>                                      
+                                    </div>
+							    </div>
+							</div>							
 							<div id="gitconfig">
 								<h4 class="col-xs-12">git config</h4>							
 							</div>
@@ -487,6 +516,10 @@
   ga('create', 'UA-23597506-9', 'auto');
   ga('send', 'pageview');
 
+$('#tab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
 </script>
   </body>
 </html>
