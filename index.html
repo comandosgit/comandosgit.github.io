@@ -89,17 +89,17 @@
                                                                              title="MacPorts">http://www.macports.org</a>).
                         Se você tem o MacPOrts instalado, instale o Git via</p>
 
-                    <div class="well well-sm">$ sudo port install git-core +svn +doc +bash_completion +gitweb</div>
+                    <div class="well well-sm">sudo port install git-core +svn +doc +bash_completion +gitweb</div>
                 </div>
                 <div class="tab-pane fade" id="linux">
                     <p>Se você quiser instalar o Git no Linux via um instalador binário, você pode fazê-lo com a
                         ferramenta de gerenciamento de pacotes (packages) disponível na sua distribuição. Caso você
                         esteja no Fedora, você pode usar o yum:</p>
 
-                    <div class="well well-sm">$ yum install git-core</div>
+                    <div class="well well-sm">yum install git-core</div>
                     <p>Ou se você estiver em uma distribuição baseada no Debian, como o Ubuntu, use o apt-get:</p>
 
-                    <div class="well well-sm">$ apt-get install git</div>
+                    <div class="well well-sm">apt-get install git</div>
                 </div>
             </div>
         </div>
@@ -122,8 +122,8 @@
                         endereço de e-mail. Isso é importante porque todos os commits no Git utilizam essas informações,
                         e está imutavelmente anexado nos commits que você realiza:</p>
 
-                    <div class="well well-sm">$ git config --global user.name "John Doe"<br>
-                        $ git config --global user.email johndoe@example.com
+                    <div class="well well-sm">git config --global user.name "John Doe"<br>git config --global user.email
+                        johndoe@example.com
                     </div>
                     <p>Relembrando, você só precisará fazer isso uma vez caso passe a opção --global, pois o Git sempre
                         usará essa informação para qualquer coisa que você faça nesse sistema. Caso você queira sobrepor
@@ -134,7 +134,8 @@
                     <br>
 
                     <p>Para ativar as cores nas respostas de comandos, você pode utilizar o seguinte comando:</p>
-
+                    Bem, nós iremos repassar esses comandos em um momento. Neste ponto, você tem um repositório Git com
+                    arquivos monitorados e um commit inicial.
                     <div class="well well-sm">git config --global color.ui true</div>
                 </div>
 
@@ -157,9 +158,7 @@
                     <p>Se você precisar de ajuda ao usar Git, existem três maneiras de obter a ajuda para qualquer um
                         dos comandos Git:</p>
 
-                    <div class="well well-sm">$ git help {comando}<br>
-                        $ git {comando} --help<br>
-                        $ man git- {comando}
+                    <div class="well well-sm">git help {comando}<br>git {comando} --help<br>man git- {comando}
                     </div>
                 </div>
 
@@ -173,6 +172,49 @@
 
     <div id="gitinit">
         <h4 class="col-xs-12">git init</h4>
+
+        <div class="col-xs-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#gitinit1" role="tab" data-toggle="tab"><h3>Repositório Git</h3></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="gitinit1">
+                    <br>
+
+                    <p>Você pode obter um projeto Git utilizando duas formas principais. A primeira faz uso de um
+                        projeto ou
+                        diretório existente e o importa para o Git. A segunda clona um repositório Git existente a
+                        partir de
+                        outro servidor.</p>
+                    <br/>
+                    <h5>Inicializando um Repositório em um Diretório Existente</h5>
+
+                    <p>Caso você esteja iniciando o monitoramento de um projeto existente com Git, você precisa ir para
+                        o
+                        diretório do projeto e digitar</p>
+
+                    <div class="well well-sm">git init</div>
+                    <p>Isso cria um novo subdiretório chamado .git que contem todos os arquivos necessários de seu
+                        repositório — um esqueleto de repositório Git. Neste ponto, nada em seu projeto é
+                        monitorado.</p>
+                    <br/>
+                    <h5>Primeira versão</h5>
+
+                    <p>Caso você queira começar a controlar o versionamento dos arquivos existentes (diferente de um
+                        diretório vazio), você provavelmente deve começar a monitorar esses arquivos e fazer um commit
+                        inicial. Você pode realizar isso com poucos comandos</p>
+
+                    <div class="well well-sm">touch .gitignore <br/>git add .gitignore <br/>git commit -m "Versão
+                        inicial do projeto"
+                    </div>
+                    <p>Bem, nós iremos repassar esses comandos em um momento. Neste ponto, você tem um repositório Git
+                        com arquivos monitorados e um commit inicial.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
     <div id="gitclone">
         <h4 class="col-xs-12">git clone</h4>
