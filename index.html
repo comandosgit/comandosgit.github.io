@@ -233,7 +233,8 @@
 
                     <div class="well well-sm">git clone git://github.com/schacon/grit.git</div>
                     <p>Se você entrar no novo diretório grit, você verá todos os arquivos do projeto nele, pronto para serem editados ou utilizados. Caso você queira clonar o repositório em um diretório diferente de grit, é possível especificar esse diretório utilizando a opção abaixo:</p>
-<div class="well well-sm">git clone git://github.com/schacon/grit.git mygrit</div>
+
+                    <div class="well well-sm">git clone git://github.com/schacon/grit.git mygrit</div>
                     <p>Este comando faz exatamente a mesma coisa que o anterior, mas o diretório alvo será chamado <b>mygrit</b>.</p>
                 </div>
             </div>
@@ -320,6 +321,31 @@
 
     <div id="gitdiff">
         <h4 class="col-xs-12">git diff</h4>
+
+        <div class="col-xs-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#gitdiff1" role="tab" data-toggle="tab"><h3>Verificando Mudanças</h3></a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="gitdiff1">
+                    <br/>
+
+                    <p>Se o comando <b>git status</b> for muito vago — você quer saber exatamente o que você alterou,
+                        não apenas quais arquivos foram alterados — você pode utilizar o comando.</p>
+
+                    <div class="well well-sm">git diff</div>
+                    <p>Apesar do comando <b>git status</b> responder essas duas perguntas de maneira geral, o <b>git
+                        diff</b> mostra as linhas exatas que foram adicionadas e removidas — o patch, por assim dizer.
+                        <br/>Se você quer ver o que selecionou que irá no seu próximo commit, pode utilizar:</p>
+
+                    <div class="well well-sm">git diff --cached</div>
+
+                </div>
+            </div>
+        </div>
     </div>
     <div id="gitcommit">
         <h4 class="col-xs-12">git commit</h4>
