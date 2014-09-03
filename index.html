@@ -221,7 +221,8 @@
         <div class="col-xs-12">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <li class="active"><a href="#giticlone1" role="tab" data-toggle="tab"><h3>Clonando um Repositório Existente</h3></a></li>
+                <li class="active"><a href="#gitclone1" role="tab" data-toggle="tab"><h3>Clonando um Repositório
+                    Existente</h3></a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
@@ -246,9 +247,75 @@
 
     <div id="gitadd">
         <h4 class="col-xs-12">git add</h4>
+
+        <div class="col-xs-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#gitadd1" role="tab" data-toggle="tab"><h3>Gravando Alterações</h3></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="gitadd1">
+                    <br/>
+
+                    <p>Quando um repositório é inicialmente clonado, todos os seus arquivos estarão monitorados e
+                        inalterados porque você simplesmente os obteve e ainda não os editou. Conforme você edita esses
+                        arquivos, o Git passa a vê-los como modificados, porque você os alterou desde seu último commit.
+                        Você seleciona esses arquivos modificados e então faz o commit de todas as alterações
+                        selecionadas e o ciclo se repete.</p>
+                    <h5>Monitorando Novos Arquivos</h5>
+
+                    <p>Para passar a monitorar um novo arquivo, use o comando <b>git add</b>. Para monitorar o arquivo
+                        <b>README</b>, você pode rodar isso:</p>
+
+                    <div class="well well-sm">git add README</div>
+                    <p>Se você rodar o comando <b>git status</b>, você pode ver que o seu arquivo <b>README</b> agora
+                        está sendo monitorado. Os arquivos monitorados serão os que faram parte do commit.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
     <div id="gitstatus">
         <h4 class="col-xs-12">git status</h4>
+
+        <div class="col-xs-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#gitstatus1" role="tab" data-toggle="tab"><h3>Verificando o Status</h3></a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="gitstatus1">
+                    <br/>
+
+                    <p>A principal ferramenta utilizada para determinar quais arquivos estão em quais estados é o
+                        comando:</p>
+
+                    <div class="well well-sm">git status</div>
+                    <p>O comando lhe mostra em qual branch você se encontra. Vamos dizer que você adicione um novo
+                        arquivo em seu projeto, um simples arquivo <b>README</b>. Caso o arquivo não exista e você
+                        execute <b>git status</b>, você verá o arquivo não monitorado dessa forma:</p>
+
+                    <div class="well well-sm"># On branch master <br/>
+                        # Untracked files: <br/>
+                        # (use "git add {file}..." to include in what will be committed) <br/>
+                        #<br/>
+                        # README<br/>
+                        nothing added to commit but untracked files present (use "git add" to track)
+                    </div>
+                    <p>Você pode ver que o seu novo arquivo <b>README</b> não está sendo monitorado, pois está listado
+                        sob o cabeçalho <b>"Untracked files"</b> na saída do comando status. Não monitorado significa
+                        basicamente que o Git está vendo um arquivo que não existia na última captura (commit); o Git
+                        não vai incluí-lo nas suas capturas de commit até que você o diga explicitamente que assim o
+                        faça. Ele faz isso para que você não inclua acidentalmente arquivos binários gerados, ou outros
+                        arquivos que você não têm a intenção de incluir. Digamos, que você queira incluir o arquivo <b>README</b>,
+                        portanto vamos começar a monitorar este arquivo.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <div id="gitdiff">
