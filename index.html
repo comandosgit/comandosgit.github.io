@@ -349,9 +349,39 @@
     </div>
     <div id="gitcommit">
         <h4 class="col-xs-12">git commit</h4>
+
+        <div class="col-xs-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#gitcommit1" role="tab" data-toggle="tab"><h3>Commits</h3></a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="gitcommit1">
+                    <br/>
+
+                    <p>Armazena o conteúdo atual do índice em um novo commit, juntamente com uma mensagem de registro do
+                        usuário que descreve as mudanças.
+                        <br/>Se usa o commit depois de já ter feito o <b>git add</b>, para fazer o commit:</p>
+
+                    <div class="well well-sm">git commit -m "Mensagem"</div>
+                    <p>Para commitar também os arquivos versionados mesmo não estando no Stage basta adicionar o
+                        parâmetro -a</p>
+
+                    <div class="well well-sm">git commit <b>-a</b> -m "Mensagem"</div>
+                    <p>Refazendo commit quando esquecer de adicionar um arquivo no Stage:</p>
+
+                    <div class="well well-sm">git commit -m "Mensagem" <b>--amend</b></div>
+                    <p>O amend é destrutivo e só deve ser utilizado antes do commit ter sido enviado ao servidor
+                        remoto.</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="gitreset">
         <h4 class="col-xs-12">git reset</h4>
+
     </div>
     <div id="gitrm">
         <h4 class="col-xs-12">git rm</h4>
