@@ -595,6 +595,25 @@
     </div>
     <div id="gitstash">
         <h4 class="col-xs-12">git stash</h4>
+        <div class="col-xs-12">
+        <!-- Nav Tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#gitstash1" role="tab" data-toggle="tab"><h3>Fazendo Stash</h3></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="gitstash1">
+                <br/>
+                <p>Muitas vezes, quando você está trabalhando em uma parte do seu projeto, as coisas estão em um estado confuso e você quer mudar de branch por um tempo para trabalhar em outra coisa. O problema é, você não quer fazer o commit de um trabalho incompleto somente para voltar a ele mais tarde. A resposta para esse problema é o comando <b>git stash</b>.<br>
+                Você quer mudar de branch, mas não quer fazer o commit do que você ainda está trabalhando; você irá fazer o stash das modificações. Para fazer um novo stash na sua pilha, execute:</p>
+                <div class="well well-sm">git stash</div>
+                <p>Seu diretório de trabalho estará limpo.<br>
+                Neste momento, você pode facilmente mudar de branch e trabalhar em outra coisa; suas alterações estão armazenadas na sua pilha. Para ver as stashes que você guardou, você pode usar</p>
+                <div class="well well-sm">git stash list</div>
+                <p>Você pode aplicar aquele que acabou de fazer o stash com o comando mostrado na saída de ajuda do comando stash original: <b>git stash apply</b>. Se você quer aplicar um dos stashes mais antigos, você pode especificá-lo, assim: <b>git stash apply stash@{2}</b>. Se você não especificar um stash, Git assume que é o stash mais recente e tenta aplicá-lo.</p>
+            </div>
+        </div>
+    </div>
     </div>
     <div id="gittag">
         <h4 class="col-xs-12">git tag</h4>
