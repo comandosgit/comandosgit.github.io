@@ -44,6 +44,7 @@ nav .nav>li>a:hover, .nav>li>a:focus{background-color: transparent;}
 .inspect{background: url(img/inspection-sm.png) no-repeat center left;}
 .debug{background: url(img/debugging-sm.png) no-repeat center left;}
 .email{background: url(img/email-sm.png) no-repeat center left;}
+.server{background: url(img/server-admin-sm.png)no-repeat center left;}
 .external{background: url(img/external-sm.png) no-repeat center left;}
 .administration{background: url(img/admin-sm.png) no-repeat center left;}
 .plumbing{background: url(img/plumbing-sm.png) no-repeat center left;}
