@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: comandosgit.github.io
+Token: 37387da16e63963c0fdbdf5a6e635f51c68a36405688c05db439a78359192e8c
