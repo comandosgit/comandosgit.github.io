@@ -50,5 +50,9 @@ nav .nav>li>a:hover, .nav>li>a:focus{background-color: transparent;}
 .plumbing{background: url(img/plumbing-sm.png) no-repeat center left;}
 .patching{background: url(img/patching-sm.png) no-repeat center left;}
 
+.tab-title{font-size: inherit;line-height: inherit;margin: inherit;font-weight: bold;}
+
+.well code{white-space: pre-wrap;font-size: inherit;color: inherit;background: transparent;padding: 0;border: none;}
+
 footer{font-size: 11px; color: #9a9994;}
 .code {background: url("img/code.png") no-repeat;padding-left: 50px;}
