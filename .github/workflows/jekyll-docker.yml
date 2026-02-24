@@ -1,4 +1,4 @@
-name: Jekyll site CI
+name: Validate HTML & Assets
 
 on:
   push:
@@ -7,14 +7,67 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
-
+  validate:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build the site in the jekyll/builder container
+
+    - name: Install validation tools
+      run: sudo apt-get update -qq && sudo apt-get install -y -qq tidy libxml2-utils
+
+    - name: Validate HTML syntax
+      run: tidy -q -e index.html
+
+    - name: Check for broken internal links
       run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+        # Extract href/src values and verify local files exist
+        exit_code=0
+        for file in $(grep -oP '(?:href|src)="(?!https?://|//|#|mailto:)([^"]+)"' index.html | grep -oP '"[^"]+"' | tr -d '"'); do
+          if [ ! -f "$file" ] && [ ! -d "$file" ]; then
+            echo "ERROR: Missing local file referenced in index.html: $file"
+            exit_code=1
+          fi
+        done
+        exit $exit_code
+
+    - name: Validate sitemap.xml well-formedness
+      run: xmllint --noout sitemap.xml
+
+    - name: Validate JSON-LD structured data syntax
+      run: |
+        # Extract JSON-LD blocks and validate JSON syntax
+        python3 -c "
+        import json, re, sys
+        with open('index.html') as f:
+            html = f.read()
+        blocks = re.findall(r'<script type=\"application/ld\+json\">(.*?)</script>', html, re.DOTALL)
+        if not blocks:
+            print('WARNING: No JSON-LD blocks found')
+            sys.exit(0)
+        for i, block in enumerate(blocks):
+            try:
+                data = json.loads(block)
+                print(f'JSON-LD block {i+1}: valid ({data.get(\"@type\", \"unknown type\")})')
+            except json.JSONDecodeError as e:
+                print(f'ERROR: JSON-LD block {i+1} is invalid: {e}')
+                sys.exit(1)
+        "
+
+    - name: Validate robots.txt references
+      run: |
+        # Check that sitemap URL in robots.txt points to an existing file
+        sitemap_path=$(grep -oP 'Sitemap:\s*https?://[^/]+/\K.*' robots.txt || true)
+        if [ -n "$sitemap_path" ] && [ ! -f "$sitemap_path" ]; then
+          echo "ERROR: robots.txt references missing sitemap: $sitemap_path"
+          exit 1
+        fi
+        echo "robots.txt is valid"
+
+    - name: Check no TODO/FIXME markers in HTML
+      run: |
+        if grep -inE '(TODO|FIXME|HACK|XXX)' index.html; then
+          echo "WARNING: Found TODO/FIXME markers in index.html"
+        else
+          echo "No TODO/FIXME markers found"
+        fi
