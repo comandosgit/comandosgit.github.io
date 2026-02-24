@@ -504,6 +504,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                         <br/>
                                         <p>Com o <b>git checkout</b> você pode mudar de branch, caso a branch ainda não exista você poderá passar o parâmetro <b>-b</b> para criar.</p>
                                         <div class="well well-sm">git checkout -b {nome_da_branch}</div>
+                                        <p>A partir do Git 2.23, o comando <b>git switch</b> foi introduzido como alternativa mais intuitiva para mudar de branch:</p>
+                                        <div class="well well-sm">git switch {nome_da_branch}
+                                            <br/>git switch -c {nome_da_nova_branch}</div>
+                                        <p>O <b>git checkout</b> continua funcionando, mas o <b>git switch</b> é recomendado por ser mais claro na intenção.</p>
                                     </div>
                                 </div>
                             </div>
@@ -664,9 +668,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             </div>
                             <div class="col-xs-12">
                                 <h4 id="gitremote">git remote</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitremote1" role="tab" data-toggle="tab"><h3>Repositórios Remotos</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitremote1">
+                                        <br/>
+                                        <p>Para ver quais servidores remotos você configurou, execute o comando <b>git remote</b>. Ele lista os nomes abreviados de cada repositório remoto que você configurou. Para ver também as URLs que o Git armazenou para leitura e escrita, adicione <b>-v</b>:</p>
+                                        <div class="well well-sm">git remote -v</div>
+                                        <p>Para adicionar um novo repositório remoto com um nome abreviado que você pode referenciar facilmente:</p>
+                                        <div class="well well-sm">git remote add {apelido} {url}</div>
+                                        <p>Para renomear a referência de um repositório remoto:</p>
+                                        <div class="well well-sm">git remote rename {nome_atual} {novo_nome}</div>
+                                        <p>Para remover uma referência de repositório remoto:</p>
+                                        <div class="well well-sm">git remote remove {nome}</div>
+                                        <p>Para ver informações detalhadas sobre um repositório remoto específico:</p>
+                                        <div class="well well-sm">git remote show {nome}</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-xs-12">
                                 <h4 id="gitsubmodule">git submodule</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitsubmodule1" role="tab" data-toggle="tab"><h3>Submódulos</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitsubmodule1">
+                                        <br/>
+                                        <p>Os submódulos permitem que você inclua um repositório Git como um subdiretório de outro repositório Git. Isso é útil quando você precisa incorporar bibliotecas externas ou projetos separados dentro do seu projeto principal.</p>
+                                        <p>Para adicionar um submódulo ao seu projeto:</p>
+                                        <div class="well well-sm">git submodule add {url} {caminho}</div>
+                                        <p>Ao clonar um repositório que contém submódulos, você precisa inicializá-los e atualizá-los:</p>
+                                        <div class="well well-sm">git submodule init
+                                            <br/>git submodule update</div>
+                                        <p>Ou você pode clonar recursivamente, o que faz tudo em um só passo:</p>
+                                        <div class="well well-sm">git clone --recurse-submodules {url}</div>
+                                        <p>Para atualizar todos os submódulos para as últimas versões remotas:</p>
+                                        <div class="well well-sm">git submodule update --remote</div>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <br>
@@ -675,18 +721,116 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
                             <div class="col-xs-12">
                                 <h4 id="gitshow">git show</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitshow1" role="tab" data-toggle="tab"><h3>Exibindo Objetos</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitshow1">
+                                        <br/>
+                                        <p>O comando <b>git show</b> exibe informações sobre objetos do Git (commits, tags, árvores, blobs). Para ver os detalhes de um commit específico, incluindo o diff das alterações:</p>
+                                        <div class="well well-sm">git show {hash_do_commit}</div>
+                                        <p>Para ver o conteúdo de um arquivo em um commit específico:</p>
+                                        <div class="well well-sm">git show {hash}:{caminho/do/arquivo}</div>
+                                        <p>Para exibir as informações de uma tag anotada:</p>
+                                        <div class="well well-sm">git show v1.0</div>
+                                        <p>Sem argumentos, exibe os detalhes do último commit:</p>
+                                        <div class="well well-sm">git show</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-xs-12">
                                 <h4 id="gitlog2">git log</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitlog2a" role="tab" data-toggle="tab"><h3>Log Avançado</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitlog2a">
+                                        <br/>
+                                        <p>Além do uso básico, o <b>git log</b> oferece várias opções para personalizar a visualização do histórico. Para ver um resumo compacto com uma linha por commit:</p>
+                                        <div class="well well-sm">git log --oneline</div>
+                                        <p>Para exibir um gráfico das branches e merges:</p>
+                                        <div class="well well-sm">git log --oneline --graph --all</div>
+                                        <p>Para filtrar commits por autor:</p>
+                                        <div class="well well-sm">git log --author="Nome"</div>
+                                        <p>Para filtrar por data:</p>
+                                        <div class="well well-sm">git log --since="2024-01-01" --until="2024-12-31"</div>
+                                        <p>Para ver quais arquivos foram alterados em cada commit:</p>
+                                        <div class="well well-sm">git log --stat</div>
+                                        <p>Para buscar commits cuja mensagem contenha um texto específico:</p>
+                                        <div class="well well-sm">git log --grep="texto"</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-xs-12">
                                 <h4 id="gitdiff2">git diff</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitdiff2a" role="tab" data-toggle="tab"><h3>Diff Avançado</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitdiff2a">
+                                        <br/>
+                                        <p>O <b>git diff</b> pode ser utilizado de várias formas avançadas. Para comparar dois branches:</p>
+                                        <div class="well well-sm">git diff {branch1}..{branch2}</div>
+                                        <p>Para comparar dois commits específicos:</p>
+                                        <div class="well well-sm">git diff {hash1} {hash2}</div>
+                                        <p>Para ver apenas os nomes dos arquivos alterados:</p>
+                                        <div class="well well-sm">git diff --name-only</div>
+                                        <p>Para ver um resumo estatístico das alterações:</p>
+                                        <div class="well well-sm">git diff --stat</div>
+                                        <p>Para comparar o stage (área de seleção) com o último commit:</p>
+                                        <div class="well well-sm">git diff --staged</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-xs-12">
                                 <h4 id="gitshortlog">git shortlog</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitshortlog1" role="tab" data-toggle="tab"><h3>Resumo de Commits</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitshortlog1">
+                                        <br/>
+                                        <p>O <b>git shortlog</b> resume a saída do <b>git log</b>, agrupando os commits por autor. É útil para gerar changelogs ou ver quem contribuiu com o quê:</p>
+                                        <div class="well well-sm">git shortlog</div>
+                                        <p>Para ver apenas a contagem de commits por autor, ordenado pela quantidade:</p>
+                                        <div class="well well-sm">git shortlog -sn</div>
+                                        <p>Para incluir todos os branches:</p>
+                                        <div class="well well-sm">git shortlog -sn --all</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-xs-12">
                                 <h4 id="gitdescribe">git describe</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitdescribe1" role="tab" data-toggle="tab"><h3>Descrevendo Commits</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitdescribe1">
+                                        <br/>
+                                        <p>O <b>git describe</b> gera um nome legível para um commit com base na tag anotada mais próxima. Isso é muito útil para identificar versões de builds:</p>
+                                        <div class="well well-sm">git describe</div>
+                                        <p>O resultado será algo como <b>v1.0-3-g7a8b9c0</b>, significando 3 commits após a tag v1.0, com o hash abreviado g7a8b9c0.</p>
+                                        <p>Para usar tags leves (não anotadas) também:</p>
+                                        <div class="well well-sm">git describe --tags</div>
+                                        <p>Para descrever um commit específico:</p>
+                                        <div class="well well-sm">git describe {hash_do_commit}</div>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <br>
@@ -695,153 +839,783 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
                             <div class="col-xs-12">
                                 <h4 id="gitapply">git apply</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitapply1" role="tab" data-toggle="tab"><h3>Aplicando Patches</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitapply1">
+                                        <br/>
+                                        <p>O comando <b>git apply</b> aplica um patch ao diretório de trabalho. Diferente de <b>git am</b>, ele não cria um commit automaticamente. Para aplicar um patch:</p>
+                                        <div class="well well-sm">git apply {arquivo.patch}</div>
+                                        <p>Para verificar se um patch pode ser aplicado sem problemas antes de realmente aplicá-lo:</p>
+                                        <div class="well well-sm">git apply --check {arquivo.patch}</div>
+                                        <p>Para ver as estatísticas do que o patch modificaria:</p>
+                                        <div class="well well-sm">git apply --stat {arquivo.patch}</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-xs-12">
                                 <h4 id="gitcherrypick">git cherry-pick</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitcherrypick1" role="tab" data-toggle="tab"><h3>Selecionando Commits</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitcherrypick1">
+                                        <br/>
+                                        <p>O <b>git cherry-pick</b> permite aplicar as alterações de um commit específico de outro branch no branch atual, criando um novo commit:</p>
+                                        <div class="well well-sm">git cherry-pick {hash_do_commit}</div>
+                                        <p>Para aplicar vários commits de uma vez:</p>
+                                        <div class="well well-sm">git cherry-pick {hash1} {hash2} {hash3}</div>
+                                        <p>Para aplicar as alterações sem criar o commit automaticamente:</p>
+                                        <div class="well well-sm">git cherry-pick --no-commit {hash_do_commit}</div>
+                                        <p>Se ocorrer um conflito durante o cherry-pick, resolva o conflito e continue com:</p>
+                                        <div class="well well-sm">git cherry-pick --continue</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-xs-12">
                                 <h4 id="gitdiff3">git diff</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitdiff3a" role="tab" data-toggle="tab"><h3>Gerando Patches</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitdiff3a">
+                                        <br/>
+                                        <p>O <b>git diff</b> pode ser utilizado para gerar arquivos de patch que podem ser compartilhados e aplicados em outros repositórios. Para gerar um patch e salvá-lo em um arquivo:</p>
+                                        <div class="well well-sm">git diff > alteracoes.patch</div>
+                                        <p>Para gerar um patch entre dois commits:</p>
+                                        <div class="well well-sm">git diff {hash1} {hash2} > alteracoes.patch</div>
+                                        <p>Para gerar um patch apenas dos arquivos no stage:</p>
+                                        <div class="well well-sm">git diff --cached > staged.patch</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitrebase" class="col-xs-12">
-                                <h4>git rebase</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitrebase">git rebase</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitrebase1" role="tab" data-toggle="tab"><h3>Rebase</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitrebase1">
+                                        <br/>
+                                        <p>O <b>git rebase</b> reaplica seus commits em cima de outro branch, criando um histórico linear. É uma alternativa ao merge. Para fazer rebase do seu branch atual sobre o master:</p>
+                                        <div class="well well-sm">git rebase master</div>
+                                        <p>Para rebase interativo, que permite editar, reordenar, combinar ou excluir commits:</p>
+                                        <div class="well well-sm">git rebase -i HEAD~3</div>
+                                        <p>Se ocorrer um conflito durante o rebase, resolva-o e continue:</p>
+                                        <div class="well well-sm">git rebase --continue</div>
+                                        <p>Para cancelar o rebase e voltar ao estado anterior:</p>
+                                        <div class="well well-sm">git rebase --abort</div>
+                                        <p><b>Atenção:</b> nunca faça rebase de commits que já foram enviados para um repositório público compartilhado.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitrevert" class="col-xs-12">
-                                <h4>git revert</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitrevert">git revert</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitrevert1" role="tab" data-toggle="tab"><h3>Revertendo Commits</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitrevert1">
+                                        <br/>
+                                        <p>O <b>git revert</b> cria um novo commit que desfaz as alterações de um commit anterior. Diferente do <b>git reset</b>, ele é seguro para uso em branches compartilhados pois não reescreve o histórico:</p>
+                                        <div class="well well-sm">git revert {hash_do_commit}</div>
+                                        <p>Para reverter sem criar o commit automaticamente (útil para reverter vários commits):</p>
+                                        <div class="well well-sm">git revert --no-commit {hash_do_commit}</div>
+                                        <p>Para reverter um merge commit, especifique o parent number:</p>
+                                        <div class="well well-sm">git revert -m 1 {hash_do_merge}</div>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <br>
                         <article class="row" id="debug">
                             <h2 class="col-xs-12">Debugando</h2>
 
-                            <div id="gitbisect" class="col-xs-12">
-                                <h4>git bisect</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitbisect">git bisect</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitbisect1" role="tab" data-toggle="tab"><h3>Busca Binária</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitbisect1">
+                                        <br/>
+                                        <p>O <b>git bisect</b> usa busca binária para encontrar o commit que introduziu um bug. Inicie o processo de bisect:</p>
+                                        <div class="well well-sm">git bisect start</div>
+                                        <p>Marque o commit atual como ruim (contém o bug):</p>
+                                        <div class="well well-sm">git bisect bad</div>
+                                        <p>Marque um commit que você sabe que estava funcionando como bom:</p>
+                                        <div class="well well-sm">git bisect good {hash_do_commit}</div>
+                                        <p>O Git vai fazer checkout do commit do meio e você testa. Se o bug existir, marque como <b>bad</b>, caso contrário como <b>good</b>. Repita até encontrar o commit exato. Ao finalizar:</p>
+                                        <div class="well well-sm">git bisect reset</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitblame" class="col-xs-12">
-                                <h4>git blame</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitblame">git blame</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitblame1" role="tab" data-toggle="tab"><h3>Anotando Linhas</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitblame1">
+                                        <br/>
+                                        <p>O <b>git blame</b> mostra, para cada linha de um arquivo, qual commit e autor a modificou pela última vez. É útil para rastrear a origem de uma alteração:</p>
+                                        <div class="well well-sm">git blame {arquivo}</div>
+                                        <p>Para ver o blame de um intervalo específico de linhas:</p>
+                                        <div class="well well-sm">git blame -L 10,20 {arquivo}</div>
+                                        <p>Para ignorar alterações de espaço em branco:</p>
+                                        <div class="well well-sm">git blame -w {arquivo}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitgrep" class="col-xs-12">
-                                <h4>git grep</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitgrep">git grep</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitgrep1" role="tab" data-toggle="tab"><h3>Pesquisando no Código</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitgrep1">
+                                        <br/>
+                                        <p>O <b>git grep</b> pesquisa por padrões de texto nos arquivos monitorados pelo Git. É mais rápido que o grep padrão por pesquisar apenas nos arquivos versionados:</p>
+                                        <div class="well well-sm">git grep "texto_a_pesquisar"</div>
+                                        <p>Para mostrar o número da linha onde o texto foi encontrado:</p>
+                                        <div class="well well-sm">git grep -n "texto_a_pesquisar"</div>
+                                        <p>Para contar o número de ocorrências por arquivo:</p>
+                                        <div class="well well-sm">git grep -c "texto_a_pesquisar"</div>
+                                        <p>Para pesquisar em um commit ou branch específico:</p>
+                                        <div class="well well-sm">git grep "texto_a_pesquisar" {branch_ou_hash}</div>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <br>
                         <article class="row" id="email">
                             <h2 class="col-xs-12">Email</h2>
 
-                            <div id="gitam" class="col-xs-12">
-                                <h4>git am</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitam">git am</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitam1" role="tab" data-toggle="tab"><h3>Aplicando Patches por Email</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitam1">
+                                        <br/>
+                                        <p>O <b>git am</b> aplica patches recebidos por email que foram gerados com <b>git format-patch</b>. Ele cria commits automaticamente preservando a autoria e a mensagem originais:</p>
+                                        <div class="well well-sm">git am {arquivo.patch}</div>
+                                        <p>Para aplicar todos os patches de um diretório de mailbox:</p>
+                                        <div class="well well-sm">git am *.patch</div>
+                                        <p>Se ocorrer um conflito, resolva-o e continue:</p>
+                                        <div class="well well-sm">git am --continue</div>
+                                        <p>Para pular o patch problemático:</p>
+                                        <div class="well well-sm">git am --skip</div>
+                                        <p>Para abortar a operação inteira:</p>
+                                        <div class="well well-sm">git am --abort</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitapply2" class="col-xs-12">
-                                <h4>git apply</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitapply2">git apply</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitapply2a" role="tab" data-toggle="tab"><h3>Aplicando Patches Simples</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitapply2a">
+                                        <br/>
+                                        <p>No contexto de email, o <b>git apply</b> é usado para aplicar patches gerados por <b>git diff</b> (em vez de <b>git format-patch</b>). Ele modifica os arquivos mas não cria commits:</p>
+                                        <div class="well well-sm">git apply {arquivo.patch}</div>
+                                        <p>A diferença entre <b>git apply</b> e <b>git am</b> é que o <b>git apply</b> não preserva as informações de autoria e não cria commits automaticamente.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitformatpatch" class="col-xs-12">
-                                <h4>git format-patch</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitformatpatch">git format-patch</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitformatpatch1" role="tab" data-toggle="tab"><h3>Gerando Patches para Email</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitformatpatch1">
+                                        <br/>
+                                        <p>O <b>git format-patch</b> gera patches no formato de email, prontos para serem enviados. Para gerar patches dos últimos N commits:</p>
+                                        <div class="well well-sm">git format-patch -3</div>
+                                        <p>Para gerar patches de todos os commits de um branch que não estão no master:</p>
+                                        <div class="well well-sm">git format-patch master</div>
+                                        <p>Para gerar todos os patches em um único arquivo:</p>
+                                        <div class="well well-sm">git format-patch master --stdout > todas_alteracoes.patch</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitsendemail" class="col-xs-12">
-                                <h4>git send-email</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitsendemail">git send-email</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitsendemail1" role="tab" data-toggle="tab"><h3>Enviando Patches por Email</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitsendemail1">
+                                        <br/>
+                                        <p>O <b>git send-email</b> envia patches gerados pelo <b>git format-patch</b> diretamente por email via SMTP. É comumente usado em projetos que aceitam contribuições por email, como o kernel Linux:</p>
+                                        <div class="well well-sm">git send-email *.patch</div>
+                                        <p>Para enviar para um destinatário específico:</p>
+                                        <div class="well well-sm">git send-email --to=email@exemplo.com *.patch</div>
+                                        <p>Antes de usar, configure o SMTP nas configurações do Git:</p>
+                                        <div class="well well-sm">git config --global sendemail.smtpserver smtp.exemplo.com
+                                            <br/>git config --global sendemail.smtpserverport 587</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitrequestpull" class="col-xs-12">
-                                <h4>git request-pull</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitrequestpull">git request-pull</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitrequestpull1" role="tab" data-toggle="tab"><h3>Solicitando Pull</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitrequestpull1">
+                                        <br/>
+                                        <p>O <b>git request-pull</b> gera um resumo das alterações entre dois commits, formatado para ser enviado a um mantenedor de projeto, solicitando que ele puxe as suas alterações:</p>
+                                        <div class="well well-sm">git request-pull {commit_inicial} {url_do_repositorio} {branch}</div>
+                                        <p>Exemplo prático:</p>
+                                        <div class="well well-sm">git request-pull v1.0 https://github.com/user/repo master</div>
+                                        <p>O resultado inclui a lista de commits, os arquivos alterados e a URL de onde o mantenedor pode fazer o pull.</p>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <br>
                         <article class="row" id="external">
                             <h2 class="col-xs-12">Sistemas Externos</h2>
 
-                            <div id="gitsvn" class="col-xs-12">
-                                <h4>git svn</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitsvn">git svn</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitsvn1" role="tab" data-toggle="tab"><h3>Integração com Subversion</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitsvn1">
+                                        <br/>
+                                        <p>O <b>git svn</b> permite usar o Git como cliente para um repositório Subversion (SVN). Para clonar um repositório SVN:</p>
+                                        <div class="well well-sm">git svn clone {url_svn}</div>
+                                        <p>Para clonar com o layout padrão do SVN (trunk, branches, tags):</p>
+                                        <div class="well well-sm">git svn clone -s {url_svn}</div>
+                                        <p>Para atualizar seu repositório local com as últimas alterações do SVN:</p>
+                                        <div class="well well-sm">git svn rebase</div>
+                                        <p>Para enviar seus commits locais de volta para o SVN:</p>
+                                        <div class="well well-sm">git svn dcommit</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitfastimport" class="col-xs-12">
-                                <h4>git fast-import</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitfastimport">git fast-import</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitfastimport1" role="tab" data-toggle="tab"><h3>Importação Rápida</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitfastimport1">
+                                        <br/>
+                                        <p>O <b>git fast-import</b> é uma ferramenta de alto desempenho para importar dados de outros sistemas de controle de versão para o Git. Ele lê um fluxo de dados formatado e cria objetos Git rapidamente:</p>
+                                        <div class="well well-sm">git fast-import &lt; dados_exportados.txt</div>
+                                        <p>O formato de entrada é específico e geralmente gerado por scripts de migração. Cada entrada define commits, blobs e referências no formato que o Git espera.</p>
+                                        <p>Após a importação, verifique o resultado com:</p>
+                                        <div class="well well-sm">git log --oneline --all</div>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <br>
                         <article class="row" id="administration">
                             <h2 class="col-xs-12">Administração</h2>
 
-                            <div id="gitclean" class="col-xs-12">
-                                <h4>git clean</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitclean">git clean</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitclean1" role="tab" data-toggle="tab"><h3>Limpando o Diretório</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitclean1">
+                                        <br/>
+                                        <p>O <b>git clean</b> remove arquivos não monitorados do diretório de trabalho. Para ver quais arquivos seriam removidos sem realmente removê-los:</p>
+                                        <div class="well well-sm">git clean -n</div>
+                                        <p>Para remover os arquivos não monitorados (requer o parâmetro <b>-f</b> por segurança):</p>
+                                        <div class="well well-sm">git clean -f</div>
+                                        <p>Para remover também diretórios não monitorados:</p>
+                                        <div class="well well-sm">git clean -fd</div>
+                                        <p>Para remover inclusive arquivos ignorados pelo .gitignore:</p>
+                                        <div class="well well-sm">git clean -fdx</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitgc" class="col-xs-12">
-                                <h4>git gc</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitgc">git gc</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitgc1" role="tab" data-toggle="tab"><h3>Coleta de Lixo</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitgc1">
+                                        <br/>
+                                        <p>O <b>git gc</b> (garbage collection) otimiza o repositório local, compactando objetos soltos e removendo objetos que não são mais acessíveis:</p>
+                                        <div class="well well-sm">git gc</div>
+                                        <p>Para uma limpeza mais agressiva:</p>
+                                        <div class="well well-sm">git gc --aggressive</div>
+                                        <p>O Git executa o gc automaticamente de tempos em tempos, mas pode ser útil executá-lo manualmente em repositórios muito grandes.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitfsck" class="col-xs-12">
-                                <h4>git fsck</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitfsck">git fsck</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitfsck1" role="tab" data-toggle="tab"><h3>Verificação de Integridade</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitfsck1">
+                                        <br/>
+                                        <p>O <b>git fsck</b> (file system check) verifica a integridade e conectividade dos objetos no banco de dados do Git:</p>
+                                        <div class="well well-sm">git fsck</div>
+                                        <p>Para ver também objetos inalcançáveis (dangling objects):</p>
+                                        <div class="well well-sm">git fsck --unreachable</div>
+                                        <p>É útil para diagnosticar problemas de corrupção no repositório ou para encontrar objetos perdidos.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitreflog" class="col-xs-12">
-                                <h4>git reflog</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitreflog">git reflog</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitreflog1" role="tab" data-toggle="tab"><h3>Log de Referências</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitreflog1">
+                                        <br/>
+                                        <p>O <b>git reflog</b> registra todas as atualizações do HEAD e das referências de branches locais. É extremamente útil para recuperar commits "perdidos" após um reset ou rebase:</p>
+                                        <div class="well well-sm">git reflog</div>
+                                        <p>Para ver o reflog de um branch específico:</p>
+                                        <div class="well well-sm">git reflog show {nome_do_branch}</div>
+                                        <p>Para recuperar um commit usando o reflog:</p>
+                                        <div class="well well-sm">git checkout HEAD@{2}</div>
+                                        <p>O reflog é mantido localmente e por padrão expira após 90 dias.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitfilterbranch" class="col-xs-12">
-                                <h4>git filter-branch</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitfilterbranch">git filter-branch</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitfilterbranch1" role="tab" data-toggle="tab"><h3>Reescrevendo Histórico</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitfilterbranch1">
+                                        <br/>
+                                        <p>O <b>git filter-branch</b> reescreve o histórico de commits aplicando filtros. <b>Atenção:</b> este comando é destrutivo e foi substituído pelo <b>git filter-repo</b> (ferramenta externa recomendada).</p>
+                                        <p>Para remover um arquivo de todo o histórico:</p>
+                                        <div class="well well-sm">git filter-branch --tree-filter 'rm -f {arquivo}' HEAD</div>
+                                        <p>Para alterar o email do autor em todos os commits:</p>
+                                        <div class="well well-sm">git filter-branch --env-filter '
+                                            <br/>if [ "$GIT_AUTHOR_EMAIL" = "antigo@email.com" ]; then
+                                            <br/>&nbsp;&nbsp;export GIT_AUTHOR_EMAIL="novo@email.com"
+                                            <br/>fi' HEAD</div>
+                                        <p>A alternativa moderna recomendada é o <b>git filter-repo</b>:</p>
+                                        <div class="well well-sm">git filter-repo --path {arquivo} --invert-paths</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitinstaweb" class="col-xs-12">
-                                <h4>git instaweb</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitinstaweb">git instaweb</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitinstaweb1" role="tab" data-toggle="tab"><h3>Interface Web</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitinstaweb1">
+                                        <br/>
+                                        <p>O <b>git instaweb</b> inicia instantaneamente um servidor web para navegar pelo repositório usando o GitWeb:</p>
+                                        <div class="well well-sm">git instaweb</div>
+                                        <p>Para especificar o servidor HTTP a ser utilizado:</p>
+                                        <div class="well well-sm">git instaweb --httpd=webrick</div>
+                                        <p>Para parar o servidor:</p>
+                                        <div class="well well-sm">git instaweb --stop</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitarchive" class="col-xs-12">
-                                <h4>git archive</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitarchive">git archive</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitarchive1" role="tab" data-toggle="tab"><h3>Criando Arquivos</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitarchive1">
+                                        <br/>
+                                        <p>O <b>git archive</b> cria um arquivo compactado (tar ou zip) do conteúdo de uma árvore Git, sem incluir os metadados do Git:</p>
+                                        <div class="well well-sm">git archive --format=tar HEAD | gzip > projeto.tar.gz</div>
+                                        <p>Para criar um arquivo zip:</p>
+                                        <div class="well well-sm">git archive --format=zip HEAD > projeto.zip</div>
+                                        <p>Para exportar apenas um subdiretório:</p>
+                                        <div class="well well-sm">git archive HEAD {caminho/do/diretorio} > subdir.tar</div>
+                                        <p>Para exportar uma tag ou branch específica:</p>
+                                        <div class="well well-sm">git archive --format=zip v1.0 > release-v1.0.zip</div>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <br>
                         <article class="row" id="server">
                             <h2 class="col-xs-12">Servidor</h2>
 
-                            <div id="gitdaemon" class="col-xs-12">
-                                <h4>git daemon</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitdaemon">git daemon</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitdaemon1" role="tab" data-toggle="tab"><h3>Servidor Git</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitdaemon1">
+                                        <br/>
+                                        <p>O <b>git daemon</b> inicia um servidor Git simples que disponibiliza repositórios via o protocolo git:// (porta 9418). É útil para compartilhamento rápido em redes locais:</p>
+                                        <div class="well well-sm">git daemon --reuseaddr --base-path=/caminho/dos/repos /caminho/dos/repos</div>
+                                        <p>Para permitir push anônimo (use com cautela):</p>
+                                        <div class="well well-sm">git daemon --reuseaddr --enable=receive-pack --base-path=/caminho/dos/repos</div>
+                                        <p>No repositório que deseja exportar, crie o arquivo que autoriza a exportação:</p>
+                                        <div class="well well-sm">touch .git/git-daemon-export-ok</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitupdateserverinfo" class="col-xs-12">
-                                <h4>git update-server-info</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitupdateserverinfo">git update-server-info</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitupdateserverinfo1" role="tab" data-toggle="tab"><h3>Atualizando Informações do Servidor</h3></a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitupdateserverinfo1">
+                                        <br/>
+                                        <p>O <b>git update-server-info</b> atualiza os arquivos auxiliares necessários para servir um repositório Git via HTTP (protocolo "dumb"). Execute após cada push em repositórios servidos por servidores web estáticos:</p>
+                                        <div class="well well-sm">git update-server-info</div>
+                                        <p>Este comando atualiza os arquivos <b>info/refs</b> e <b>objects/info/packs</b>, que são necessários para que clientes possam descobrir as referências e objetos disponíveis.</p>
+                                        <p>Geralmente, este comando é configurado como um hook <b>post-update</b> para ser executado automaticamente.</p>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                         <br>
                         <article class="row" id="plumbing">
                             <h2 class="col-xs-12">Canalização de Código</h2>
 
-                            <div id="gitcatfile" class="col-xs-12">
-                                <h4>git cat-file</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitcatfile">git cat-file</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitcatfile1" role="tab" data-toggle="tab"><h3>Inspecionando Objetos</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitcatfile1">
+                                        <br/>
+                                        <p>O <b>git cat-file</b> exibe o conteúdo, tipo ou tamanho de objetos do Git (blobs, trees, commits, tags). Para ver o tipo de um objeto:</p>
+                                        <div class="well well-sm">git cat-file -t {hash}</div>
+                                        <p>Para ver o conteúdo de um objeto:</p>
+                                        <div class="well well-sm">git cat-file -p {hash}</div>
+                                        <p>Para ver o tamanho de um objeto:</p>
+                                        <div class="well well-sm">git cat-file -s {hash}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitcommittree" class="col-xs-12">
-                                <h4>git commit-tree</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitcommittree">git commit-tree</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitcommittree1" role="tab" data-toggle="tab"><h3>Criando Commits Manualmente</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitcommittree1">
+                                        <br/>
+                                        <p>O <b>git commit-tree</b> cria um novo objeto de commit a partir de um objeto tree. É o comando de baixo nível que o <b>git commit</b> usa internamente:</p>
+                                        <div class="well well-sm">echo "mensagem" | git commit-tree {hash_da_tree}</div>
+                                        <p>Para criar um commit com um parent específico:</p>
+                                        <div class="well well-sm">echo "mensagem" | git commit-tree {hash_da_tree} -p {hash_do_parent}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitcountobjects" class="col-xs-12">
-                                <h4>git count-objects</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitcountobjects">git count-objects</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitcountobjects1" role="tab" data-toggle="tab"><h3>Contando Objetos</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitcountobjects1">
+                                        <br/>
+                                        <p>O <b>git count-objects</b> conta o número de objetos soltos e o espaço em disco que eles ocupam:</p>
+                                        <div class="well well-sm">git count-objects</div>
+                                        <p>Para uma saída mais detalhada incluindo objetos empacotados:</p>
+                                        <div class="well well-sm">git count-objects -v</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitdiffindex" class="col-xs-12">
-                                <h4>git diff-index</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitdiffindex">git diff-index</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitdiffindex1" role="tab" data-toggle="tab"><h3>Comparando com o Índice</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitdiffindex1">
+                                        <br/>
+                                        <p>O <b>git diff-index</b> compara uma árvore (tree) com o índice (staging area) ou com o diretório de trabalho. É o comando de baixo nível usado pelo <b>git diff</b>:</p>
+                                        <div class="well well-sm">git diff-index HEAD</div>
+                                        <p>Para comparar apenas o índice (sem verificar o diretório de trabalho):</p>
+                                        <div class="well well-sm">git diff-index --cached HEAD</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitforeachref" class="col-xs-12">
-                                <h4>git for-each-ref</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitforeachref">git for-each-ref</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitforeachref1" role="tab" data-toggle="tab"><h3>Iterando Referências</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitforeachref1">
+                                        <br/>
+                                        <p>O <b>git for-each-ref</b> exibe informações sobre cada referência no repositório. É útil para scripts e automação. Para listar todos os branches com seus últimos commits:</p>
+                                        <div class="well well-sm">git for-each-ref --format='%(refname:short) %(objectname:short) %(subject)' refs/heads/</div>
+                                        <p>Para listar tags ordenadas por data:</p>
+                                        <div class="well well-sm">git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/tags/</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="githashobject" class="col-xs-12">
-                                <h4>git hash-object</h4>
+                            <div class="col-xs-12">
+                                <h4 id="githashobject">git hash-object</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#githashobject1" role="tab" data-toggle="tab"><h3>Calculando Hash</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="githashobject1">
+                                        <br/>
+                                        <p>O <b>git hash-object</b> calcula o hash SHA de um objeto e opcionalmente o armazena no banco de dados do Git. Para calcular o hash de um arquivo:</p>
+                                        <div class="well well-sm">git hash-object {arquivo}</div>
+                                        <p>Para calcular o hash e armazenar o objeto no banco de dados:</p>
+                                        <div class="well well-sm">git hash-object -w {arquivo}</div>
+                                        <p>Para calcular o hash de uma string:</p>
+                                        <div class="well well-sm">echo "conteudo" | git hash-object --stdin</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitmergebase" class="col-xs-12">
-                                <h4>git merge-base</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitmergebase">git merge-base</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitmergebase1" role="tab" data-toggle="tab"><h3>Ancestral Comum</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitmergebase1">
+                                        <br/>
+                                        <p>O <b>git merge-base</b> encontra o melhor ancestral comum entre dois commits, que é o ponto de partida para um merge de três vias:</p>
+                                        <div class="well well-sm">git merge-base {branch1} {branch2}</div>
+                                        <p>Para verificar se um commit é ancestral de outro:</p>
+                                        <div class="well well-sm">git merge-base --is-ancestor {commit1} {commit2}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitreadtree" class="col-xs-12">
-                                <h4>git read-tree</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitreadtree">git read-tree</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitreadtree1" role="tab" data-toggle="tab"><h3>Lendo Árvores</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitreadtree1">
+                                        <br/>
+                                        <p>O <b>git read-tree</b> lê informações de uma árvore (tree) para o índice (staging area). É o comando de baixo nível usado por <b>git checkout</b> e <b>git merge</b>:</p>
+                                        <div class="well well-sm">git read-tree {hash_da_tree}</div>
+                                        <p>Para fazer um merge de três vias no índice:</p>
+                                        <div class="well well-sm">git read-tree -m {base} {branch1} {branch2}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitrevlist" class="col-xs-12">
-                                <h4>git rev-list</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitrevlist">git rev-list</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitrevlist1" role="tab" data-toggle="tab"><h3>Listando Commits</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitrevlist1">
+                                        <br/>
+                                        <p>O <b>git rev-list</b> lista objetos de commit em ordem cronológica reversa. É o comando de baixo nível que alimenta o <b>git log</b>:</p>
+                                        <div class="well well-sm">git rev-list HEAD</div>
+                                        <p>Para contar o número total de commits:</p>
+                                        <div class="well well-sm">git rev-list --count HEAD</div>
+                                        <p>Para listar commits que estão em um branch mas não em outro:</p>
+                                        <div class="well well-sm">git rev-list {branch1} ^{branch2}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitrevparse" class="col-xs-12">
-                                <h4>git rev-parse</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitrevparse">git rev-parse</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitrevparse1" role="tab" data-toggle="tab"><h3>Resolvendo Referências</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitrevparse1">
+                                        <br/>
+                                        <p>O <b>git rev-parse</b> traduz nomes de referências em hashes SHA. É amplamente utilizado em scripts:</p>
+                                        <div class="well well-sm">git rev-parse HEAD</div>
+                                        <p>Para obter o diretório raiz do repositório:</p>
+                                        <div class="well well-sm">git rev-parse --show-toplevel</div>
+                                        <p>Para verificar se está dentro de um repositório Git:</p>
+                                        <div class="well well-sm">git rev-parse --is-inside-work-tree</div>
+                                        <p>Para obter o nome abreviado do branch atual:</p>
+                                        <div class="well well-sm">git rev-parse --abbrev-ref HEAD</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitshowref" class="col-xs-12">
-                                <h4>git show-ref</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitshowref">git show-ref</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitshowref1" role="tab" data-toggle="tab"><h3>Exibindo Referências</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitshowref1">
+                                        <br/>
+                                        <p>O <b>git show-ref</b> lista referências (branches e tags) no repositório local junto com seus hashes:</p>
+                                        <div class="well well-sm">git show-ref</div>
+                                        <p>Para listar apenas tags:</p>
+                                        <div class="well well-sm">git show-ref --tags</div>
+                                        <p>Para verificar se uma referência existe:</p>
+                                        <div class="well well-sm">git show-ref --verify refs/heads/{branch}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitsymbolicref" class="col-xs-12">
-                                <h4>git symbolic-ref</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitsymbolicref">git symbolic-ref</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitsymbolicref1" role="tab" data-toggle="tab"><h3>Referências Simbólicas</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitsymbolicref1">
+                                        <br/>
+                                        <p>O <b>git symbolic-ref</b> lê ou modifica referências simbólicas (como HEAD). Para ver para qual branch o HEAD aponta:</p>
+                                        <div class="well well-sm">git symbolic-ref HEAD</div>
+                                        <p>Para obter apenas o nome curto do branch:</p>
+                                        <div class="well well-sm">git symbolic-ref --short HEAD</div>
+                                        <p>Para alterar o HEAD para apontar para outro branch:</p>
+                                        <div class="well well-sm">git symbolic-ref HEAD refs/heads/{branch}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitupdateindex" class="col-xs-12">
-                                <h4>git update-index</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitupdateindex">git update-index</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitupdateindex1" role="tab" data-toggle="tab"><h3>Manipulando o Índice</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitupdateindex1">
+                                        <br/>
+                                        <p>O <b>git update-index</b> modifica o índice (staging area) diretamente. Para marcar um arquivo como "assume unchanged" (útil para ignorar alterações locais de configuração):</p>
+                                        <div class="well well-sm">git update-index --assume-unchanged {arquivo}</div>
+                                        <p>Para reverter e voltar a monitorar as alterações:</p>
+                                        <div class="well well-sm">git update-index --no-assume-unchanged {arquivo}</div>
+                                        <p>Para adicionar um arquivo ao índice manualmente:</p>
+                                        <div class="well well-sm">git update-index --add {arquivo}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitupdateref" class="col-xs-12">
-                                <h4>git update-ref</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitupdateref">git update-ref</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitupdateref1" role="tab" data-toggle="tab"><h3>Atualizando Referências</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitupdateref1">
+                                        <br/>
+                                        <p>O <b>git update-ref</b> atualiza o hash armazenado em uma referência de forma segura. Para apontar um branch para um commit específico:</p>
+                                        <div class="well well-sm">git update-ref refs/heads/{branch} {hash}</div>
+                                        <p>Para deletar uma referência:</p>
+                                        <div class="well well-sm">git update-ref -d refs/heads/{branch}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitverifypack" class="col-xs-12">
-                                <h4>git verify-pack</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitverifypack">git verify-pack</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitverifypack1" role="tab" data-toggle="tab"><h3>Verificando Pacotes</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitverifypack1">
+                                        <br/>
+                                        <p>O <b>git verify-pack</b> verifica a validade de um arquivo de pacote Git (.pack). Para verificar um pacote e listar seu conteúdo:</p>
+                                        <div class="well well-sm">git verify-pack -v .git/objects/pack/{arquivo}.idx</div>
+                                        <p>É útil para diagnosticar problemas com pacotes corrompidos ou para analisar quais objetos ocupam mais espaço no repositório.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="gitwritetree" class="col-xs-12">
-                                <h4>git write-tree</h4>
+                            <div class="col-xs-12">
+                                <h4 id="gitwritetree">git write-tree</h4>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="active"><a href="#gitwritetree1" role="tab" data-toggle="tab"><h3>Escrevendo Árvores</h3></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="gitwritetree1">
+                                        <br/>
+                                        <p>O <b>git write-tree</b> cria um objeto tree a partir do conteúdo atual do índice (staging area). É o complemento do <b>git read-tree</b> e é usado internamente pelo <b>git commit</b>:</p>
+                                        <div class="well well-sm">git write-tree</div>
+                                        <p>O comando retorna o hash SHA-1 da árvore criada, que pode ser usado com <b>git commit-tree</b> para criar um commit manualmente.</p>
+                                    </div>
+                                </div>
                             </div>
                         </article>
                     </section>
@@ -1022,7 +1796,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                 </ul>
                             </li>
                             <li>
-                              <li>
                                 <a href="#server" class="server" title="Servidor"><b>Servidor</b></a>
                                 <ul class="nav">
                                       <li><a href="#gitdaemon" title="git daemon">git daemon</a>
