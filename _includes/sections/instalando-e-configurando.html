@@ -1,0 +1,99 @@
+<article class="row" id="instalando-e-configurando">
+    <h2 class="col-xs-12">Instalando e Configurando</h2>
+
+    <div class="col-xs-12">
+        <h4 id="instalacao">Instalação</h4>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#windows" role="tab" data-toggle="tab"><h3>Windows</h3></a>
+            </li>
+            <li><a href="#mac" role="tab" data-toggle="tab"><h3>Mac</h3></a>
+            </li>
+            <li><a href="#linux" role="tab" data-toggle="tab"><h3>Linux</h3></a>
+            </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <br>
+
+            <div class="tab-pane fade in active" id="windows">
+                <p>Instalar o Git no Windows é muito fácil. O projeto msysgit tem um dos procedimentos mais simples de instalação. Simplesmente baixe o arquivo exe do instalador a partir da página do GitHub e execute-o:
+                </p>
+
+                <div class="well well-sm"><a href="https://msysgit.github.com" title="Instalar Git no Windows">https://msysgit.github.com</a>
+                </div>
+                <p>Após concluir a instalação, você terá tanto uma versão command line (linha de comando, incluindo um cliente SSH que será útil depois) e uma GUI padrão.</p>
+            </div>
+            <div class="tab-pane fade" id="mac">
+                <p>Existem duas formas fáceis de se instalar Git em um Mac. A mais fácil delas é usar o instalador gráfico do Git, que você pode baixar da página do SourceForge:</p>
+
+                <div class="well well-sm"><a href="https://sourceforge.net/projects/git-osx-installer/" title="Instalar Git no Mac">https://sourceforge.net/projects/git-osx-installer/</a>
+                </div>
+                <p>A outra forma comum é instalar o Git via MacPorts (<a href="https://www.macports.org" title="MacPorts">https://www.macports.org</a>). Se você tem o MacPOrts instalado, instale o Git via</p>
+
+                <div class="well well-sm">sudo port install git-core +svn +doc +bash_completion +gitweb</div>
+            </div>
+            <div class="tab-pane fade" id="linux">
+                <p>Se você quiser instalar o Git no Linux via um instalador binário, você pode fazê-lo com a ferramenta de gerenciamento de pacotes (packages) disponível na sua distribuição. Caso você esteja no Fedora, você pode usar o yum:</p>
+
+                <div class="well well-sm">yum install git-core</div>
+                <p>Ou se você estiver em uma distribuição baseada no Debian, como o Ubuntu, use o apt-get:</p>
+
+                <div class="well well-sm">apt-get install git</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <h4 id="gitconfig">git config</h4>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#gitconfig1" role="tab" data-toggle="tab"><h3>Sua Identidade</h3></a>
+            </li>
+            <li><a href="#gitconfig2" role="tab" data-toggle="tab"><h3>Ativando Cores</h3></a>
+            </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="gitconfig1">
+                <br>
+
+                <p>A primeira coisa que você deve fazer quando instalar o Git é definir o seu nome de usuário e endereço de e-mail. Isso é importante porque todos os commits no Git utilizam essas informações, e está imutavelmente anexado nos commits que você realiza:</p>
+
+                <div class="well well-sm">git config --global user.name "John Doe"
+                    <br>git config --global user.email johndoe@example.com
+                </div>
+                <p>Relembrando, você só precisará fazer isso uma vez caso passe a opção --global, pois o Git sempre usará essa informação para qualquer coisa que você faça nesse sistema. Caso você queira sobrepor estas com um nome ou endereço de e-mail diferentes para projetos específicos, você pode executar o comando sem a opção --global quando estiver no próprio projeto.</p>
+            </div>
+            <div class="tab-pane fade" id="gitconfig2">
+                <br>
+
+                <p>Para ativar as cores nas respostas de comandos, você pode utilizar o seguinte comando:</p>
+                Bem, nós iremos repassar esses comandos em um momento. Neste ponto, você tem um repositório Git com arquivos monitorados e um commit inicial.
+                <div class="well well-sm">git config --global color.ui true</div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <h4 id="githelp">git help</h4>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#githelp1" role="tab" data-toggle="tab"><h3>Obter Ajuda</h3></a>
+            </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="githelp1">
+                <br>
+
+                <p>Se você precisar de ajuda ao usar Git, existem três maneiras de obter a ajuda para qualquer um dos comandos Git:</p>
+
+                <div class="well well-sm">git help {comando}
+                    <br>git {comando} --help
+                    <br>man git- {comando}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</article>

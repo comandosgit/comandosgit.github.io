@@ -1,0 +1,27 @@
+title: Comandos Git
+tagline: Aprenda Git do básico ao avançado
+description: >-
+  Comandos Git, aprenda Git do básico ao avançado com tutorial para Windows,
+  Mac e Linux (Ubuntu) usando as principais ferramentas como GitHub, BitBucket e GitLab
+author: Rafael Corrêa Gomes
+url: "https://comandosgit.github.io"
+baseurl: ""
+lang: pt
+
+google_verification: "E5A42C839A2CF7FA50F0FB3FCA369D4E"
+gtm_id: "GTM-T2DGXXP"
+
+keywords: >-
+  git branch, git commit, git remote, comandos git, github, git merge,
+  windows, mac, bitbucket, git, linux, ubuntu, debian, controle de versão,
+  git add, git pull, git push, git remote
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - LICENSE.html
+  - AGENTS.md
+  - .gitignore
+  - vendor/

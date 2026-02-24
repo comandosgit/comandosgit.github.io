@@ -1,0 +1,202 @@
+- title: Instalando e Configurando
+  id: instalando-e-configurando
+  css_class: install
+  items:
+    - title: Instalação
+      id: instalacao
+    - title: git config
+      id: gitconfig
+    - title: git help
+      id: githelp
+
+- title: Criando o projeto
+  id: criando-o-projeto
+  css_class: project
+  items:
+    - title: git init
+      id: gitinit
+    - title: git clone
+      id: gitclone
+
+- title: Básico
+  id: basico
+  css_class: basic
+  items:
+    - title: git add
+      id: gitadd
+    - title: git status
+      id: gitstatus
+    - title: git diff
+      id: gitdiff
+    - title: git commit
+      id: gitcommit
+    - title: git reset
+      id: gitreset
+    - title: git rm
+      id: gitrm
+    - title: git mv
+      id: gitmv
+
+- title: Branch e Merge
+  id: branch
+  css_class: branch
+  items:
+    - title: git branch
+      id: gitbranch
+    - title: git checkout
+      id: gitcheckout
+    - title: git merge
+      id: gitmerge
+    - title: git mergetool
+      id: gitmergetool
+    - title: git log
+      id: gitlog
+    - title: git stash
+      id: gitstash
+    - title: git tag
+      id: gittag
+
+- title: Compartilhar e Atualizar Projetos
+  id: sharing
+  css_class: sharing
+  items:
+    - title: git fetch
+      id: gitfetch
+    - title: git pull
+      id: gitpull
+    - title: git push
+      id: gitpush
+    - title: git remote
+      id: gitremote
+    - title: git submodule
+      id: gitsubmodule
+
+- title: Inspeção e Comparação
+  id: inspect
+  css_class: inspect
+  items:
+    - title: git show
+      id: gitshow
+    - title: git log
+      id: gitlog2
+    - title: git diff
+      id: gitdiff2
+    - title: git shortlog
+      id: gitshortlog
+    - title: git describe
+      id: gitdescribe
+
+- title: Pacotes
+  id: patching
+  css_class: patching
+  items:
+    - title: git apply
+      id: gitapply
+    - title: git cherry-pick
+      id: gitcherrypick
+    - title: git diff
+      id: gitdiff3
+    - title: git rebase
+      id: gitrebase
+    - title: git revert
+      id: gitrevert
+
+- title: Debugando
+  id: debug
+  css_class: debug
+  items:
+    - title: git bisect
+      id: gitbisect
+    - title: git blame
+      id: gitblame
+    - title: git grep
+      id: gitgrep
+
+- title: Email
+  id: email
+  css_class: email
+  items:
+    - title: git am
+      id: gitam
+    - title: git apply
+      id: gitapply2
+    - title: git format-patch
+      id: gitformatpatch
+    - title: git send-email
+      id: gitsendemail
+    - title: git request-pull
+      id: gitrequestpull
+
+- title: Sistemas Externos
+  id: external
+  css_class: external
+  items:
+    - title: git svn
+      id: gitsvn
+    - title: git fast-import
+      id: gitfastimport
+
+- title: Administração
+  id: administration
+  css_class: administration
+  items:
+    - title: git clean
+      id: gitclean
+    - title: git gc
+      id: gitgc
+    - title: git fsck
+      id: gitfsck
+    - title: git reflog
+      id: gitreflog
+    - title: git filter-branch
+      id: gitfilterbranch
+    - title: git instaweb
+      id: gitinstaweb
+    - title: git archive
+      id: gitarchive
+
+- title: Servidor
+  id: server
+  css_class: server
+  items:
+    - title: git daemon
+      id: gitdaemon
+    - title: git update-server-info
+      id: gitupdateserverinfo
+
+- title: Canalização de Código
+  id: plumbing
+  css_class: plumbing
+  items:
+    - title: git cat-file
+      id: gitcatfile
+    - title: git commit-tree
+      id: gitcommittree
+    - title: git count-objects
+      id: gitcountobjects
+    - title: git diff-index
+      id: gitdiffindex
+    - title: git for-each-ref
+      id: gitforeachref
+    - title: git hash-object
+      id: githashobject
+    - title: git merge-base
+      id: gitmergebase
+    - title: git read-tree
+      id: gitreadtree
+    - title: git rev-list
+      id: gitrevlist
+    - title: git rev-parse
+      id: gitrevparse
+    - title: git show-ref
+      id: gitshowref
+    - title: git symbolic-ref
+      id: gitsymbolicref
+    - title: git update-index
+      id: gitupdateindex
+    - title: git update-ref
+      id: gitupdateref
+    - title: git verify-pack
+      id: gitverifypack
+    - title: git write-tree
+      id: gitwritetree
